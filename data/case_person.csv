@@ -1,0 +1,9 @@
+case_id,person_id,role
+C001,P001,Suspect
+C001,P002,Witness
+C002,P002,Suspect
+C002,P003,Associate
+C003,P003,Suspect
+C003,P004,Associate
+C004,P002,Suspect
+C004,P004,Associate

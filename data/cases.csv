@@ -1,0 +1,5 @@
+case_id,case_type,location_id,date
+C001,Robbery,L001,2026-08-10
+C002,Vehicle Theft,L002,2026-08-14
+C003,Cyber Fraud,L003,2026-08-18
+C004,Financial Fraud,L001,2026-08-21

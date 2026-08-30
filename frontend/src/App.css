@@ -1,0 +1,616 @@
+/* =========================================================
+   CRIMELINK AI
+   PROFESSIONAL DASHBOARD THEME
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  background: #eef2f7;
+  color: #0f172a;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+  background: #0b1220;
+  color: white;
+  padding: 28px 50px;
+  border-bottom: 3px solid #38bdf8;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.18);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 750;
+  letter-spacing: -0.5px;
+}
+
+.header p {
+  margin: 7px 0 0;
+  color: #94a3b8;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+
+/* =========================================================
+   STAT CARDS
+   ========================================================= */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  padding: 28px 50px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 24px rgba(15, 23, 42, 0.10);
+}
+
+.card svg {
+  width: 34px;
+  height: 34px;
+  color: #2563eb;
+  flex-shrink: 0;
+}
+
+.card h3 {
+  margin: 0 0 5px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.card strong {
+  font-size: 23px;
+  font-weight: 750;
+  color: #0f172a;
+}
+
+/* =========================================================
+   PANELS
+   ========================================================= */
+
+.panel {
+  background: #ffffff;
+  margin: 0 50px 24px;
+  padding: 26px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+}
+
+.panel-title {
+  margin-bottom: 20px;
+}
+
+.panel-title h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.panel-title p {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* =========================================================
+   SEARCH / INPUT
+   ========================================================= */
+
+.assistant-input {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.assistant-input input {
+  flex: 1;
+  height: 46px;
+  padding: 0 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  background: #f8fafc;
+  color: #0f172a;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.assistant-input input::placeholder {
+  color: #94a3b8;
+}
+
+.assistant-input input:focus {
+  background: white;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+.assistant-input button {
+  height: 46px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 9px;
+  background: #0f172a;
+  color: white;
+  font-weight: 650;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: 0.2s ease;
+}
+
+.assistant-input button:hover {
+  background: #1e293b;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   SEARCH RESULTS
+   ========================================================= */
+
+.search-results {
+  margin-top: 16px;
+}
+
+.assistant-result {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 17px;
+  margin-top: 9px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #f8fafc;
+  transition: 0.18s ease;
+}
+
+.assistant-result:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.assistant-result strong {
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.assistant-result span {
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* =========================================================
+   PROFILE
+   ========================================================= */
+
+.profile-header h3 {
+  margin: 8px 0 0;
+  font-size: 22px;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin: 22px 0;
+}
+
+.profile-grid div {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 17px;
+  border-radius: 10px;
+}
+
+.profile-grid span {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #64748b;
+  margin-bottom: 7px;
+}
+
+.profile-grid strong {
+  font-size: 17px;
+}
+
+.big-score {
+  font-size: 25px !important;
+  color: #dc2626;
+}
+
+.profile ul {
+  padding-left: 20px;
+}
+
+.profile li {
+  margin: 8px 0;
+  color: #475569;
+}
+
+/* =========================================================
+   INVESTIGATION PATH
+   ========================================================= */
+
+.path-controls {
+  display: flex;
+  align-items: end;
+  gap: 14px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.path-select {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.path-select label {
+  font-size: 12px;
+  font-weight: 650;
+  color: #64748b;
+}
+
+.path-select select {
+  min-width: 230px;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  background: white;
+  color: #0f172a;
+  outline: none;
+}
+
+.path-select select:focus {
+  border-color: #2563eb;
+}
+
+.path-arrow {
+  font-size: 22px;
+  color: #64748b;
+  padding-bottom: 10px;
+}
+
+.path-button {
+  height: 44px;
+  padding: 0 21px;
+  border: none;
+  border-radius: 9px;
+  background: #0f172a;
+  color: white;
+  font-weight: 650;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.path-button:hover {
+  background: #1e293b;
+}
+
+.path-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.path-result {
+  margin-top: 22px;
+  padding: 20px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.path-result h3 {
+  margin-top: 0;
+}
+
+.path-chain {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.path-node {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.person-node {
+  padding: 10px 16px;
+  border-radius: 9px;
+  background: #0f172a;
+  color: white;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.path-node small {
+  color: #64748b;
+}
+
+.path-line {
+  font-size: 20px;
+  color: #64748b;
+}
+
+.distance {
+  color: #475569;
+}
+
+.no-path {
+  font-weight: 600;
+  color: #dc2626;
+}
+
+/* =========================================================
+   INVESTIGATIVE LEADS TABLE
+   ========================================================= */
+
+.table-container {
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+th,
+td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+td {
+  font-size: 14px;
+}
+
+tbody tr {
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+tbody tr:hover {
+  background: #f1f5f9;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.score {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 6px;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+/* =========================================================
+   NETWORK GRAPH
+   ========================================================= */
+
+.network-container {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  overflow: hidden;
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at center, #ffffff 0%, #f8fafc 72%);
+  border: 1px solid #e2e8f0;
+}
+
+/* =========================================================
+   NETWORK LEGEND
+   ========================================================= */
+
+.network-legend {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin: 0 0 15px;
+  padding: 12px 15px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+}
+
+.network-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  color: #475569;
+  white-space: nowrap;
+}
+
+.legend-dot {
+  width: 11px;
+  height: 11px;
+  min-width: 11px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.community-blue {
+  background: #2563eb;
+}
+
+.community-red {
+  background: #dc2626;
+}
+
+.community-green {
+  background: #16a34a;
+}
+
+.community-purple {
+  background: #9333ea;
+}
+
+.legend-important {
+  font-weight: 700;
+  color: #334155 !important;
+}
+
+/* =========================================================
+   AI ASSISTANT
+   ========================================================= */
+
+.assistant {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #f8fafc 100%
+  );
+}
+
+.assistant-response {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.assistant-response h3 {
+  margin: 0 0 14px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .profile-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .header {
+    padding: 22px;
+  }
+
+  .header h1 {
+    font-size: 26px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .panel {
+    margin: 0 20px 20px;
+    padding: 20px;
+  }
+
+  .profile-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .assistant-result {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .assistant-input {
+    flex-direction: column;
+  }
+
+  .assistant-input button {
+    width: 100%;
+  }
+
+  .path-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .path-select select {
+    width: 100%;
+  }
+
+  .path-arrow {
+    display: none;
+  }
+
+}
+
+@media (max-width: 450px) {
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+}
