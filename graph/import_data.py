@@ -1,9 +1,9 @@
 from neo4j import GraphDatabase
 import pandas as pd
 
-URI = "bolt://localhost:7687"
-USERNAME = "neo4j"
-PASSWORD = "clai2026"
+URI = "neo4j+s://47f15ce9.databases.neo4j.io"
+USERNAME = "47f15ce9"
+PASSWORD = "7On1olwzoJyqewARnL9qnGSsALsGwZ6CelA2YK6eCQU"
 
 driver = GraphDatabase.driver(
     URI,
