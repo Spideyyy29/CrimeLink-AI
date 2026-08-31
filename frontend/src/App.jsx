@@ -9,8 +9,12 @@ import {
 } from "lucide-react";
 
 import "./App.css";
-
 import NetworkGraph from "./NetworkGraph";
+
+
+const api = axios.create({
+  baseURL: import.meta.env.VITE_API_URL,
+});
 
 function App() {
   const [persons, setPersons] = useState([]);
@@ -27,8 +31,8 @@ function App() {
   const [pathLoading, setPathLoading] = useState(false);
 
   useEffect(() => {
-    axios
-      .get("http://127.0.0.1:8000/persons")
+    api
+      .get("/persons")
       .then((response) => {
         setPersons(response.data);
       })
@@ -36,8 +40,8 @@ function App() {
         console.error("Persons API error:", error);
       });
 
-    axios
-      .get("http://127.0.0.1:8000/leads")
+    api
+      .get("/leads")
       .then((response) => {
         setLeads(response.data);
       })
@@ -47,8 +51,8 @@ function App() {
   }, []);
 
   const selectPerson = (person) => {
-    axios
-      .get(`http://127.0.0.1:8000/persons/${person.person_id}`)
+    api
+      .get(`/persons/${person.person_id}`)
       .then((response) => {
         setSelectedPerson(response.data);
       })
@@ -63,8 +67,8 @@ function App() {
     setLoading(true);
 
     try {
-      const response = await axios.post(
-        "http://127.0.0.1:8000/assistant",
+      const response = await api.post(
+        "/assistant",
         {
           question: question
         }
@@ -91,8 +95,8 @@ function App() {
     if (!searchText.trim()) return;
 
     try {
-      const response = await axios.get(
-        "http://127.0.0.1:8000/search",
+      const response = await api.get(
+        "/search",
         {
           params: {
             name: searchText
@@ -124,8 +128,8 @@ function App() {
 
     try {
 
-      const response = await axios.get(
-        "http://127.0.0.1:8000/shortest-path",
+      const response = await api.get(
+        "/shortest-path",
         {
           params: {
             person1: person1,

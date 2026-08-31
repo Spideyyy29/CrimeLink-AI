@@ -7,7 +7,7 @@ function NetworkGraph() {
   const graphRef = useRef();
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/network")
+    fetch(`${import.meta.env.VITE_API_URL}/network`)
       .then((response) => response.json())
       .then((data) => {
         setGraphData(data);
