@@ -67,13 +67,13 @@ function NetworkGraph() {
 
         nodeVal={(node) => {
           const score = Number(node.leadScore) || 0;
-          return 6 + score / 10;
+          return 5 + score / 15;
         }}
 
         nodeCanvasObject={(node, ctx, globalScale) => {
           const label = node.name || node.id;
           const score = Number(node.leadScore) || 0;
-          const radius = 6 + score / 10;
+          const radius = 6 + score / 16;
           const community = Number(node.community) || 0;
           const nodeColor =
             communityColors[community % communityColors.length];
@@ -85,8 +85,8 @@ function NetworkGraph() {
           ctx.fill();
 
           // Highlight key leads
-          if (score >= 50) {
-            ctx.lineWidth = 2.5;
+          if (score >= 0.70) {
+            ctx.lineWidth = 3;
             ctx.strokeStyle = "#dc2626";
             ctx.stroke();
           }

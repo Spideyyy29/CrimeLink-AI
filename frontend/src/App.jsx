@@ -574,89 +574,91 @@ function App() {
         </div>
       
         {assistantResponse && (
+
           <div className="assistant-response">
 
-            <h3>🔎 {assistantResponse.answer}</h3>
+        ```
+        <h3>🔎 {assistantResponse.answer}</h3>
 
-            {Array.isArray(assistantResponse.data) ? (
+        {/* TOP LEADS */}
+        {Array.isArray(assistantResponse.data) && (
+          assistantResponse.data.map((item, index) => (
+            <div className="assistant-result" key={index}>
 
-              assistantResponse.data.map((item, index) => (
-                <div className="assistant-result" key={index}>
+              {item.name && (
+                <strong>{item.name}</strong>
+              )}
 
-                  {item.name && (
-                    <strong>{item.name}</strong>
-                  )}
+              {item.person_id && (
+                <span>ID: {item.person_id}</span>
+              )}
 
-                  {item.person_id && (
-                    <span>ID: {item.person_id}</span>
-                  )}
+              {item.score !== undefined && (
+                <span>
+                  Lead Score: {Number(item.score).toFixed(2)}
+                </span>
+              )}
 
-                  {item.score !== undefined && (
-                    <span>
-                      Lead Score: {Number(item.score).toFixed(2)}
-                    </span>
-                  )}
+              {item.leadScore !== undefined && (
+                <span>
+                  Lead Score: {Number(item.leadScore).toFixed(2)}
+                </span>
+              )}
 
-                  {item.leadScore !== undefined && (
-                    <span>
-                      Lead Score: {Number(item.leadScore).toFixed(2)}
-                    </span>
-                  )}
+            </div>
+          ))
+        )}
 
-                  {item.community !== undefined && (
-                    <span>
-                      Community: {item.community}</span>
-                  )}
+        {/* PERSON INFORMATION */}
+        {!Array.isArray(assistantResponse.data) &&
+          assistantResponse.data && (
+            <div className="assistant-result">
 
-                </div>
-              ))
+              <strong>
+                {assistantResponse.data.name}
+              </strong>
 
-            ) : (
+              <span>
+                ID: {assistantResponse.data.person_id}
+              </span>
 
-              <div className="assistant-result">
+              <span>
+                Community: {assistantResponse.data.community}
+              </span>
 
-                {assistantResponse.data?.name && (
-                  <strong>
-                    {assistantResponse.data.name}
-                  </strong>
+              <span>
+                Lead Score:{" "}
+                {assistantResponse.data.leadScore !== null &&
+                assistantResponse.data.leadScore !== undefined
+                  ? Number(assistantResponse.data.leadScore).toFixed(2)
+                  : "N/A"}
+              </span>
+
+              <div>
+                <strong>Associated Cases:</strong>
+
+                {assistantResponse.data.cases?.length > 0 ? (
+                  <ul>
+                    {assistantResponse.data.cases.map(
+                      (caseId, index) => (
+                        <li key={index}>
+                          {caseId}
+                        </li>
+                      )
+                    )}
+                  </ul>
+                ) : (
+                  <span>No associated cases</span>
                 )}
-
-                {assistantResponse.data?.person_id && (
-                  <span>
-                    ID: {assistantResponse.data.person_id}
-                  </span>
-                )}
-
-                {assistantResponse.data?.community !== undefined && (
-                  <span>
-                    Community: {assistantResponse.data.community}
-                  </span>
-                )}
-
-                {assistantResponse.data?.leadScore !== undefined && (
-                  <span>
-                    Lead Score:{" "}
-                    {Number(
-                      assistantResponse.data.leadScore
-                    ).toFixed(2)}
-                  </span>
-                )}
-
-                {assistantResponse.data?.cases && (
-                  <span>
-                    Cases:{" "}
-                    {assistantResponse.data.cases.length > 0
-                      ? assistantResponse.data.cases.join(", ")
-                      : "No associated cases"}
-                  </span>
-                )}
-
               </div>
 
-            )}
+            </div>
+          )}
+        ```
 
           </div>
         )}
+
       </section>
     </div>
   );
